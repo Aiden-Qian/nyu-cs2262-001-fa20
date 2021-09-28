@@ -1,0 +1,12 @@
+kind: Service
+metadata:
+  name: sample-time-app
+  labels:
+    k8s-app: sample-time-app
+spec:
+  selector:
+    k8s-app: sample-time-app
+  type: NodePort
+  ports:
+   - port: 8080
+}
