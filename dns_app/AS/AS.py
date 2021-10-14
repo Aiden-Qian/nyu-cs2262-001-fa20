@@ -13,18 +13,18 @@ while True:
     message = json.loads(in_data.decode())
     ip = 'VALUE' in message
     if not ip:
-        hostname = message['NAME']
         type = message['TYPE']
-        cont = dict[type + ' ' + hostname]
-        fs_ip = cont['VALUE']
+        hostname = message['NAME']
+        fs_ip = context['VALUE']
+        context = dict[type + ' ' + hostname]
         response_message=str(fs_ip).encode()
     else:
-        hostname = message['NAME']
         ip = message['VALUE']
         type = message['TYPE']
         ttl = message['TTL']
-        cont = {'TYPE': type, 'NAME': hostname, 'VALUE': ip, 'TTL': ttl}
+        hostname = message['NAME']
+        context = {'TYPE': type, 'NAME': hostname, 'VALUE': ip, 'TTL': ttl}
         key = type + ' ' + hostname
-        dict[key] = cont
+        dict[key] = context
         response_message=json.dumps('').encode()
     sock.sendto(response_message, addr) 
