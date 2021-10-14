@@ -1,0 +1,1 @@
+curl -X PUT -H "Content-Type: application/json" -d '{"hostname":"fibonacci.com","ip":IP_ADDRESS,"as_ip":AS_IP_ADDRESS,"as_port":"53533"}' localhost:9090/register
