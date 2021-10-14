@@ -22,13 +22,13 @@ def fibo():
 
     if  hostname and fs_port and number and as_ip and as_port:
         
-        client_socket = socket(AF_INET, SOCK_DGRAM)
+        client = socket(AF_INET, SOCK_DGRAM)
         query_json = {'TYPE': 'A', 'NAME': hostname}
-        client_socket.sendto(json.dumps(query_json).encode(), (as_ip, 53533))
-        ip_address, server_address = client_socket.recvfrom(2048)
-        infor= json.loads(ip_address.decode())
-        value=infor['VALUE']
-        client_socket .close()
+        client.sendto(json.dumps(query_json).encode(), (as_ip, 53533))
+        ip_address, server_address = client.recvfrom(2048)
+        message= json.loads(ip_address.decode())
+        value=message['VALUE']
+        client .close()
         result = requests.get("http://{}:{}fibonacci?number={}".format(value,fs_port,number))
         return request(result.json(), 200)
     else:
