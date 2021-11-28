@@ -1,0 +1,4 @@
+main file is FSM_my
+
+javac -cp ../lib/Fsm.jar *.java 
+java -cp ../lib/Fsm.jar:. FSM_my

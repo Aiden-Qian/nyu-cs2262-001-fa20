@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "FSM/lib",
+        "FSM/src",
+        "FSM",
+        "FSM/lib/Fsm"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "FSM/lib/Fsm.jar"
+    ]
+}
